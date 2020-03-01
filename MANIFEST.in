@@ -1,0 +1,18 @@
+include MANIFEST.in
+include requirements.txt
+include *.json
+include *.md
+include *.py
+include *.txt
+recursive-include upidapp *.css
+recursive-include upidapp *.csv
+recursive-include upidapp *.html
+recursive-include upidapp *.ico
+recursive-include upidapp *.js
+recursive-include upidapp *.json
+recursive-include upidapp *.md
+recursive-include upidapp *.png
+recursive-include upidapp *.py
+recursive-include upidapp *.svg
+recursive-include upidapp *.txt
+recursive-exclude upidapp *.pyc
