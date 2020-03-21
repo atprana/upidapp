@@ -5,7 +5,9 @@
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "type_name"
+  "type_name",
+  "abbr",
+  "description"
  ],
  "fields": [
   {
@@ -19,9 +21,19 @@
    "reqd": 1,
    "translatable": 1,
    "unique": 1
+  },
+  {
+   "fieldname": "abbr",
+   "fieldtype": "Data",
+   "label": "Abbr"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Data",
+   "label": "Description"
   }
  ],
- "modified": "2020-02-26 19:46:35.853068",
+ "modified": "2020-03-12 17:11:09.223010",
  "modified_by": "Administrator",
  "module": "Upidapp",
  "name": "Material Request Type",

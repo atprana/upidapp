@@ -87,6 +87,18 @@ app_license = "Custom"
 #	}
 # }
 
+doc_events = {
+    "Material Request": {
+        "before_submit": "upidapp.upidapp.event_handler.beforeSubmit"
+    },
+    "Purchase Order": {
+        "before_submit": "upidapp.upidapp.event_handler.beforeSubmit"
+    },
+    "Purchase Receipt": {
+        "setup": "upidapp.upidapp.event_handler.setup",
+    }
+}
+
 
 # Scheduled Tasks
 # ---------------
@@ -127,4 +139,3 @@ app_license = "Custom"
 # override_doctype_dashboards = {
 # 	"Task": "upidapp.task.get_dashboard_data"
 # }
-
