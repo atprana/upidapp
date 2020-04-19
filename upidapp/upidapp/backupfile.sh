@@ -1,0 +1,1 @@
+bench backup --with-files

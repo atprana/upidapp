@@ -1,0 +1,22 @@
+{
+ "add_total_row": 0,
+ "creation": "2020-04-18 16:46:38.054526",
+ "disable_prepared_report": 0,
+ "disabled": 0,
+ "docstatus": 0,
+ "doctype": "Report",
+ "idx": 0,
+ "is_standard": "Yes",
+ "letter_head": "Unipres Report",
+ "modified": "2020-04-18 18:05:22.509489",
+ "modified_by": "Administrator",
+ "module": "Upidapp",
+ "name": "Stock Ledger Custom",
+ "owner": "Administrator",
+ "prepared_report": 0,
+ "query": "SELECT\r\n    concat_ws(\" \", sle.posting_date, sle.posting_time) as 'Date:Date:90',\r\n\tCONCAT_WS(': ',tabItem.item_code,tabItem.item_name) as 'Item:Data:265',\t\r\n\ttabItem.item_group as 'Item Group', \r\n\tsle.warehouse AS Warehouse, \r\n\ttabItem.stock_uom as UOM, \r\n\tsle.actual_qty AS 'Qty:Int:50', \r\n\tsle.qty_after_transaction AS `Balance Qty:Int:90`, \r\n\tsle.incoming_rate AS `Incoming Rate:Currency:110`, \r\n\tsle.valuation_rate AS `Valuation Rate:Currency:110`, \r\n\tsle.stock_value AS `Balance Value:Currency:110`, \r\n\tsle.voucher_type AS `Voucher Type`, \r\n\tsle.voucher_no AS `Voucher #`, \r\n\tIF\r\n\t( ISNULL( mr1.`name`), mr2.`name`, mr1.name) AS 'Request:Data:130', \r\n\tIF\r\n\t( ISNULL( mr1.department ), mr2.department, mr1.department ) AS 'Department:Data:120', \r\n\tIF\r\n\t( ISNULL( mr1.employee_name ), mr2.employee_name, mr1.employee_name ) AS 'Employee:Data:130'\r\nFROM\r\n\t`tabStock Ledger Entry` AS sle\r\n\tLEFT JOIN\r\n\t`tabPurchase Receipt Item`\r\n\tON \r\n\t\tsle.voucher_detail_no = `tabPurchase Receipt Item`.`name`\r\n\tLEFT JOIN\r\n\t`tabStock Entry Detail`\r\n\tON \r\n\t\tsle.voucher_detail_no = `tabStock Entry Detail`.`name`\r\n\tLEFT JOIN\r\n\t`tabMaterial Request` AS mr1\r\n\tON \r\n\t\t`tabPurchase Receipt Item`.material_request = mr1.`name`\r\n\tLEFT JOIN\r\n\t`tabMaterial Request` AS mr2\r\n\tON \r\n\t\t`tabStock Entry Detail`.material_request = mr2.`name`\r\n\tINNER JOIN\r\n\ttabItem\r\n\tON \r\n\t\tsle.item_code = tabItem.item_code",
+ "ref_doctype": "Stock Ledger Entry",
+ "report_name": "Stock Ledger Custom",
+ "report_type": "Query Report",
+ "roles": []
+}

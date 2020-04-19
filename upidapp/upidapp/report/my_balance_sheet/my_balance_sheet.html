@@ -1,0 +1,51 @@
+
+<table class="table table-bordered">
+	<thead>
+		<tr>				
+			<th rowspan=2 style="width:11%">{%= __("Supplier") %}</th>
+			<th rowspan=2 style="width:11%">{%= __("Purchase Order") %}</th>				
+			<th rowspan=2 style="width:4%">{%= __("Item Code") %}</th>
+			<th rowspan=2 style="width:11%">{%= __("Item Name") %}</th>
+			<th rowspan=2 style="width:4%">{%= __("Qty") %}</th>
+			<th rowspan=2 style="width:4%">{%= __("UOM") %}</th>
+			<th rowspan=2 style="width:4%">{%= __("Rate") %}</th>
+			<th rowspan=2 style="width:5%">{%= __("Amount") %}</th>
+			<th colspan=3 align="right">{%= __("Purchase Receipt") %}</th>
+			<th colspan=5 align="right">{%= __("Invoice") %}</th>			
+		</tr>
+
+		<tr>
+			<th style="width:11%">{%= __("No") %}</th>
+			<th style="width:4%">{%= __("Qty") %}</th>
+			<th style="width:4%">{%= __("UOM") %}</th>
+			<th style="width:10%">{%= __("No") %}</th>
+			<th style="width:4%">{%= __("Qty") %}</th>
+			<th style="width:4%">{%= __("UOM") %}</th>
+			<th style="width:4%">{%= __("Rate") %}</th>
+			<th style="width:5%">{%= __("Amount") %}</th>			
+		</tr>
+
+	</thead>
+	<tbody>
+        {% for(var i=0, l=data.length; i<l; i++) { %}
+        <tr>
+            <td>{%= data[i]["supplier_name"] %}</td>
+            <td>{%= data[i][ ("po")] %} </td>
+            <td>{%= data[i][("item_code")] %} </td>
+            <td>{%= data[i][("item_name")] %} </td>
+            <td align="right">{%= data[i][("qty")] %} </td>
+            <td>{%= data[i]["uom"] %}</td>            
+            <td align="right">{%= data[i][("rate")] %} </td>
+            <td align="right">{%= data[i][("amount")] %} </td>
+            <td >{%= data[i][("recv_no")] %} </td>
+            <td align="right">{%= data[i]["recv_qty"] %}</td>
+            <td>{%= data[i][ ("recv_uom")] %} </td>
+            <td >{%= data[i][("inv_no")] %} </td>
+            <td align="right">{%= data[i][("inv_qty")] %} </td>
+            <td align="right">{%= data[i][("inv_uom")] %} </td>
+            <td align="right">{%= data[i][("inv_rate")] %} </td>
+            <td align="right">{%= data[i][("inv_amount")] %} </td>
+        </tr>
+        {% } %}
+	</tbody>
+</table>

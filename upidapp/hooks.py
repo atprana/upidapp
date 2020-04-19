@@ -91,12 +91,16 @@ doc_events = {
     "Material Request": {
         "before_submit": "upidapp.upidapp.event_handler.beforeSubmit"
     },
+    "Material Request": {
+    	"mr_type": "upidapp.upidapp.event_handler.setNamingSeries"
+    },
     "Purchase Order": {
         "before_submit": "upidapp.upidapp.event_handler.beforeSubmit"
     },
     "Purchase Receipt": {
         "setup": "upidapp.upidapp.event_handler.setup",
     }
+
 }
 
 

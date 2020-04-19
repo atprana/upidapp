@@ -1,0 +1,165 @@
+{
+ "creation": "2020-04-10 17:46:26.336025",
+ "doctype": "DocType",
+ "document_type": "Document",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "po_date",
+  "department",
+  "employee_name",
+  "mr_number",
+  "po_number",
+  "supplier",
+  "item_code",
+  "item_name",
+  "item_group",
+  "po_qty",
+  "po_unit",
+  "po_rate",
+  "po_amount",
+  "receipt_date",
+  "receipt_number",
+  "receipt_qty",
+  "receipt_unit",
+  "invoice_date",
+  "invoice_number",
+  "invoice_qty",
+  "invoice_unit",
+  "invoice_amount",
+  "invoice_status"
+ ],
+ "fields": [
+  {
+   "fieldname": "po_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "PO Date"
+  },
+  {
+   "fieldname": "department",
+   "fieldtype": "Read Only",
+   "in_list_view": 1,
+   "label": "Department"
+  },
+  {
+   "fieldname": "employee_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Employee Name"
+  },
+  {
+   "fieldname": "mr_number",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "MR Number"
+  },
+  {
+   "fieldname": "po_number",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "PO Number"
+  },
+  {
+   "fieldname": "supplier",
+   "fieldtype": "Data",
+   "label": "Supplier"
+  },
+  {
+   "fieldname": "item_code",
+   "fieldtype": "Data",
+   "label": "Item Code"
+  },
+  {
+   "fieldname": "item_name",
+   "fieldtype": "Data",
+   "label": "Item Name"
+  },
+  {
+   "fieldname": "item_group",
+   "fieldtype": "Data",
+   "label": "Item Group"
+  },
+  {
+   "fieldname": "po_qty",
+   "fieldtype": "Data",
+   "label": "PO Qty"
+  },
+  {
+   "fieldname": "po_unit",
+   "fieldtype": "Data",
+   "label": "PO Unit"
+  },
+  {
+   "fieldname": "po_rate",
+   "fieldtype": "Data",
+   "label": "PO Rate"
+  },
+  {
+   "fieldname": "po_amount",
+   "fieldtype": "Data",
+   "label": "PO Amount"
+  },
+  {
+   "fieldname": "receipt_date",
+   "fieldtype": "Data",
+   "label": "Receipt Date"
+  },
+  {
+   "fieldname": "receipt_number",
+   "fieldtype": "Data",
+   "label": "Receipt Number"
+  },
+  {
+   "fieldname": "receipt_qty",
+   "fieldtype": "Data",
+   "label": "Receipt Qty"
+  },
+  {
+   "fieldname": "receipt_unit",
+   "fieldtype": "Data",
+   "label": "Receipt Unit"
+  },
+  {
+   "fieldname": "invoice_date",
+   "fieldtype": "Data",
+   "label": "Invoice Date"
+  },
+  {
+   "fieldname": "invoice_number",
+   "fieldtype": "Data",
+   "label": "Invoice Number"
+  },
+  {
+   "fieldname": "invoice_qty",
+   "fieldtype": "Data",
+   "label": "Invoice Qty"
+  },
+  {
+   "fieldname": "invoice_unit",
+   "fieldtype": "Data",
+   "label": "Invoice Unit"
+  },
+  {
+   "fieldname": "invoice_amount",
+   "fieldtype": "Data",
+   "label": "Invoice Amount"
+  },
+  {
+   "fieldname": "invoice_status",
+   "fieldtype": "Data",
+   "label": "Invoice Status"
+  }
+ ],
+ "istable": 1,
+ "modified": "2020-04-10 18:28:32.479966",
+ "modified_by": "Administrator",
+ "module": "Upidapp",
+ "name": "PO Listing Item",
+ "owner": "Administrator",
+ "permissions": [],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}
