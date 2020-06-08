@@ -88,20 +88,27 @@ app_license = "Custom"
 # }
 
 doc_events = {
+	"*" : { 
+		"before_insert":  "upidapp.upidapp.event_handler.beforeInsertAll" ,
+				
+		"before_submit":  "upidapp.upidapp.event_handler.beforeSubmitAll"
+
+		},
+	
     "Material Request": {
         "before_submit": "upidapp.upidapp.event_handler.beforeSubmit"
-    },
+    	},
     "Material Request": {
     	"mr_type": "upidapp.upidapp.event_handler.setNamingSeries"
-    },
+    	},
     "Purchase Order": {
         "before_submit": "upidapp.upidapp.event_handler.beforeSubmit"
-    },
+    	},
     "Purchase Receipt": {
         "setup": "upidapp.upidapp.event_handler.setup",
-    }
+    	}
 
-}
+	}
 
 
 # Scheduled Tasks
