@@ -9,6 +9,6 @@ def get_data():
 			"color": "blue",
 			"icon": "octicon octicon-file-directory",
 			"type": "module",
-			"label": _("Upidapp")
+			"label": _("UPID App")
 		}
 	]

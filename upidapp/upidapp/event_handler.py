@@ -9,6 +9,7 @@ def beforeSubmit(doc, method):
 def beforeInsertAll(doc, method):
 	try:
 		doc.input_by = frappe.session.user
+		doc.submit_by = ""
 	except Exception as e:
 		pass
 	
