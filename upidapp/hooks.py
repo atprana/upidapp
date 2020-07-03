@@ -91,7 +91,10 @@ doc_events = {
 	"*" : { 
 		"before_insert":  "upidapp.upidapp.event_handler.beforeInsertAll" ,				
 		"before_submit":  "upidapp.upidapp.event_handler.beforeSubmitAll"
-		}
+		},
+	"Bin" : {
+		"projected_qty":   "upidapp.upidapp.event_handler.projectedQtyChange"
+		}	
 	}
 
 
