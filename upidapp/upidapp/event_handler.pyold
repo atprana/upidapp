@@ -17,9 +17,5 @@ def beforeSubmitAll(doc, method):
 	except Exception as e:
 		pass	
 
-def projectedQtyChange(doc,method):
-<<<<<<< HEAD
+def projectedQtyChange(doc,method)
 	frappe.db.set_value('Item', doc.item_code, 'total_projected_qty', doc.projected_qty)
-=======
-	frappe.db.set_valu('Item', doc.item_code, 'total_projected_qty', doc.projected_qty)
->>>>>>> 172b2f4aad2b04e8663814eb5c058d0bfc64ce80
