@@ -100,6 +100,13 @@ doc_events = {
 # Scheduled Tasks
 # ---------------
 
+scheduler_events = {
+ 	"all": [
+ 		"upidapp.tasks.testall"
+ 	]
+ }
+
+
 # scheduler_events = {
 # 	"all": [
 # 		"upidapp.tasks.all"
