@@ -12,7 +12,7 @@ def beforeInsertAll(doc, method):
 def beforeSubmitAll(doc, method):
 	last_date = frappe.db.get_single_value("Unipres Transaction Lock Setting", "last_transaction_date")
 	is_locked = frappe.db.get_single_value("Unipres Transaction Lock Setting", "enable_lock")
-
+	last_date = datetime.strptime(last_date, '%Y-%m-%d').date()
 	if is_locked:
 		if hasattr(doc,"transaction_date"):
 			transaction_date = datetime.strptime(doc.transaction_date, '%Y-%m-%d').date() if isinstance(doc.transaction_date, str) else doc.transaction_date 
