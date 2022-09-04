@@ -23,7 +23,12 @@ def beforeSubmitAll(doc, method):
 			posting_date = datetime.strptime(doc.posting_date, '%Y-%m-%d').date() if isinstance(doc.posting_date, str)  else doc.posting_date 
 			if posting_date < last_date:	
 					frappe.msgprint( ("Posting Date before {0} already locked").format(last_date))
+<<<<<<< HEAD
 					raise frappe.ValidationError		
+=======
+					raise frappe.ValidationError
+	
+>>>>>>> 5f855768dc7c427572097207355f8bccd097769b
 
 	if hasattr(doc,"submit_by"):
 		doc.submit_by = frappe.session.user
