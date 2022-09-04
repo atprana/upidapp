@@ -1,3 +1,4 @@
+from time import strptime
 import frappe
 from datetime import *
 
@@ -6,7 +7,6 @@ def beforeInsertAll(doc, method):
 		doc.input_by = frappe.session.user
 	if hasattr(doc,"submit_by"):		
 		doc.submit_by = ""
-		
 
 
 def beforeSubmitAll(doc, method):
@@ -15,14 +15,15 @@ def beforeSubmitAll(doc, method):
 
 	if is_locked:
 		if hasattr(doc,"transaction_date"):
-			if  doc.transaction_date < last_date:
-				frappe.msgprint( ("Transaction Date before {0} already locked").format(last_date))
-				raise frappe.ValidationError
+			transaction_date = datetime.strptime(doc.transaction_date, '%Y-%m-%d').date() if isinstance(doc.transaction_date, str) else doc.transaction_date 
+			if  transaction_date  < last_date:
+					frappe.msgprint( ("Transaction Date before {0} already locked").format(last_date))
+					raise frappe.ValidationError
 		if hasattr(doc,"posting_date"):
-			if  doc.posting_date < last_date:
-				frappe.msgprint( ("Posting Date before {0} already locked").format(last_date))
-				raise frappe.ValidationError		
-	
+			posting_date = datetime.strptime(doc.posting_date, '%Y-%m-%d').date() if isinstance(doc.posting_date, str)  else doc.posting_date 
+			if posting_date < last_date:	
+					frappe.msgprint( ("Posting Date before {0} already locked").format(last_date))
+					raise frappe.ValidationError		
 
 	if hasattr(doc,"submit_by"):
 		doc.submit_by = frappe.session.user
