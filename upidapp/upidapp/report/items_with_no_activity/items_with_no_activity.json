@@ -1,0 +1,62 @@
+{
+ "add_total_row": 0,
+ "creation": "2022-09-12 17:19:49.252664",
+ "disable_prepared_report": 0,
+ "disabled": 0,
+ "docstatus": 0,
+ "doctype": "Report",
+ "idx": 0,
+ "is_standard": "Yes",
+ "letter_head": "Unipres Report",
+ "modified": "2022-09-12 17:22:23.457976",
+ "modified_by": "Administrator",
+ "module": "Upidapp",
+ "name": "Items with no activity",
+ "owner": "Administrator",
+ "prepared_report": 0,
+ "query": "select i.item_code, item_name from tabItem i \n  where not exists(select b.item_code from tabBin b where b.item_code = i.item_code)\norder by i.item_code",
+ "ref_doctype": "Item",
+ "report_name": "Items with no activity",
+ "report_type": "Query Report",
+ "roles": [
+  {
+   "role": "Purchase User"
+  },
+  {
+   "role": "Manufacturing User"
+  },
+  {
+   "role": "Stock User"
+  },
+  {
+   "role": "Stock Manager"
+  },
+  {
+   "role": "Maintenance User"
+  },
+  {
+   "role": "Accounts User"
+  },
+  {
+   "role": "Item Manager"
+  },
+  {
+   "role": "Sales User"
+  },
+  {
+   "role": "MR User"
+  },
+  {
+   "role": "MR Manager"
+  },
+  {
+   "role": "Unipres Accounts User"
+  },
+  {
+   "role": "Reader Unipres"
+  },
+  {
+   "role": "Purchase Manager"
+  }
+ ]
+}

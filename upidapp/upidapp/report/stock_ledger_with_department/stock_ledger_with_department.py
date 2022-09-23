@@ -5,11 +5,13 @@ from __future__ import unicode_literals
 import frappe
 from frappe import _
 from erpnext.stock.utils import update_included_uom_in_report
+from frappe import msgprint
 
 def execute(filters=None):
 	include_uom = filters.get("include_uom")
 	columns = get_columns()
 	items = get_items(filters)
+
 	sl_entries = get_stock_ledger_entries(filters, items)
 	item_details = get_item_details(items, sl_entries, include_uom)
 	opening_row = get_opening_balance(filters, columns)
@@ -76,10 +78,12 @@ def get_columns():
 
 def get_stock_ledger_entries(filters, items):
 	item_conditions_sql = ''
+	frappe.msgprint(filters.get_value)
+	
 	if items:
 		item_conditions_sql = 'and sle.item_code in ({})'\
 			.format(', '.join([frappe.db.escape(i) for i in items]))
-
+	
 	return frappe.db.sql("""SELECT
 	concat_ws( " ", sle.posting_date, sle.posting_time ) AS date, 
 	sle.item_code, 
@@ -141,7 +145,7 @@ def get_items(filters):
 
 	items = []
 	if conditions:
-		items = frappe.db.sql_list("""select name from `tabItem` item where {}"""
+		items = frappe.db.sql_list("""select name from `tabItem` item where {} and item.show_ledger=1"""
 			.format(" and ".join(conditions)), filters)
 	return items
 

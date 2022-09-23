@@ -25,11 +25,17 @@ frappe.query_reports["Stock Ledger with Department"] = {
 			"default": frappe.datetime.get_today(),
 			"reqd": 1
 		},
-		{
+		{		
 			"fieldname":"warehouse",
 			"label": __("Warehouse"),
 			"fieldtype": "Link",
-			"options": "Warehouse"
+			"options": "Warehouse",
+			"get_query": function() {
+				const company = frappe.query_report.get_filter_value('company');
+				return { 
+					filters: { 'company': company }
+				}
+			}
 		},
 		{
 			"fieldname":"item_code",
@@ -54,9 +60,6 @@ frappe.query_reports["Stock Ledger with Department"] = {
 			"label": __("Voucher #"),
 			"fieldtype": "Data"
 		},
-		
-		
-
 		{
 			"fieldname":"include_uom",
 			"label": __("Include UOM"),
