@@ -6,4 +6,5 @@ def get_default_warehouse(itemcode):
 	
 @frappe.whitelist()
 def get_employee(userid):
-	return if frappe.db.sql("""select name from tabEmployee emp where  emp.user_id = %s""", userid) else ""
+	return frappe.db.sql("""select name from tabEmployee emp where  emp.user_id = %s""", userid)
+	
