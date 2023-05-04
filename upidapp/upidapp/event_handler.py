@@ -15,12 +15,12 @@ def beforeSubmitAll(doc, method):
 	last_date = datetime.strptime(last_date, '%Y-%m-%d').date() if isinstance(last_date,str) else last_date
 
 	if is_locked:
-		if hasattr(doc,"transaction_date"):
+		if hasattr(doc,"transaction_date") and doc.transaction_date is not None:
 			transaction_date = datetime.strptime(doc.transaction_date, '%Y-%m-%d').date() if isinstance(doc.transaction_date, str) else doc.transaction_date 
 			if  transaction_date  < last_date:
 					frappe.msgprint( ("Transaction Date before {0} already locked").format(last_date))
 					raise frappe.ValidationError
-		if hasattr(doc,"posting_date"):
+		if hasattr(doc,"posting_date") and doc.posting_date is not None:
 			posting_date = datetime.strptime(doc.posting_date, '%Y-%m-%d').date() if isinstance(doc.posting_date, str)  else doc.posting_date 
 			if posting_date < last_date:	
 					frappe.msgprint( ("Posting Date before {0} already locked").format(last_date))
